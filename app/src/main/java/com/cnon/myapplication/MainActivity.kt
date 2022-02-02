@@ -45,7 +45,9 @@ class MainActivity : AppCompatActivity() {
 
         try {
             dosya = FileReader( "${applicationContext.filesDir}/sinem2.txt")
-            var oku :Int =0
+            /*
+            //bu blok karakter karakter okutur
+             var oku :Int =0
             while(oku!=-1)
             {
 
@@ -54,6 +56,12 @@ class MainActivity : AppCompatActivity() {
                 oku = dosya.read()
             }
             println(rtyhg)
+             */
+
+            dosya.forEachLine {
+                println(it)
+            }
+
         }
         catch(e : Exception)
         {
